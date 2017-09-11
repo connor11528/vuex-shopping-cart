@@ -11,6 +11,16 @@
   ```
 </details>
 
+<details>
+  <summary>Create ProductList component</summary>
+  
+</details>
+
+<details>
+  <summary>Create AddProduct component</summary>
+  
+</details>
+
 
 ## Build Setup
 
