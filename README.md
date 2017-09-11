@@ -26,6 +26,11 @@
   Add methods etc
 </details>
 
+<details>
+  <summary>Remove Products</summary>
+  Remove product methods
+</details>
+
 
 ## Build Setup
 

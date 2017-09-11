@@ -5,6 +5,7 @@
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -12,6 +13,7 @@
         <td>{{product.name}}</td>
         <td>{{product.description}}</td>
         <td>${{product.price}}</td>
+        <td><a href='#' v-on:click.prevent.stop="onRemove(product.id)" class='button is-danger'>remove</a></td>
       </tr>
     </tbody>
   </table>
@@ -23,6 +25,9 @@ export default {
   methods: {
     onEdit (product) {
       this.$emit('edit', product)
+    },
+    onRemove (productId) {
+      this.$emit('remove', productId)
     }
   }
 }
