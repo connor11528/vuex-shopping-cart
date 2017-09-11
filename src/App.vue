@@ -2,8 +2,11 @@
   <div id="app" class='container'>
     <add-product 
       :productToAdd='newProduct'
-      v-on:form-submitted="saveProduct"></add-product>
-    <product-list :products="products"></product-list>
+      v-on:form-submitted="saveProduct"
+      v-on:cancel="resetAddProductForm"></add-product>
+    <product-list 
+      :products="products"
+      v-on:edit="onEditClicked"></product-list>
   </div>
 </template>
 
@@ -28,13 +31,28 @@ export default {
     ProductList
   },
   methods: {
-    saveProduct(newProduct){
-      newProduct.id = uuid.v4()
-      this.products.push(newProduct)
+    saveProduct(product){
+      // use ES6 findIndex to associate correct product
+      const index = this.products.findIndex((p) => p.id === product.id);
+
+      if (index !== -1) {
+        this.products.splice(index, 1, product)
+      } else {
+        // add a new product
+        product.id = uuid.v4()
+        this.products.push(product)
+      }
+
       this.resetAddProductForm()
     },
     resetAddProductForm(){
       this.newProduct = initialData.newProduct
+    },
+    onEditClicked (product) {
+      // since objects are passed by reference we need to clone the product
+      // either by using Object.assign({}, product) or by using object
+      // spread like we do here.
+      this.newProduct = product
     }
   },
   data () {

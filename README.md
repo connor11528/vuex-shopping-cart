@@ -12,13 +12,18 @@
 </details>
 
 <details>
-  <summary>Create ProductList component</summary>
-  
+  <summary>List Products</summary>
+  Create ProductList component
 </details>
 
 <details>
-  <summary>Create AddProduct component</summary>
-  
+  <summary>Add Products</summary>
+  Create AddProduct component
+</details>
+
+<details>
+  <summary>Update Products</summary>
+  Add methods etc
 </details>
 
 

@@ -12,7 +12,10 @@
       <label for="price" class='label'>Price</label>
       <input type="number" v-model="productToAdd.price" class="input" id="price" placeholder="Enter Price" number>
     </div>
-    <button type="submit" v-on:click.prevent="onSubmit" class="button is-primary">Add product</button>
+    <button type="submit" v-on:click.prevent="onSubmit" class="button is-primary">
+      {{ !productToAdd.id ? 'Add product' : 'Update product'}}
+    </button>
+    <button v-on:click="onCancel" class="button" v-show='productToAdd.id'>Cancel</button>
   </form>
 </template>
 
@@ -22,6 +25,9 @@ export default {
   methods: {
     onSubmit () {
       this.$emit('form-submitted', this.productToAdd);
+    },
+    onCancel() {
+      this.$emit('cancel');
     }
   }
 }
