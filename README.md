@@ -2,9 +2,12 @@
 
 > a shopping cart built with vue and vuex
 
-## Vuex Tutorial
 
-In some [previous](https://blog.jscrambler.com/build-app-vue-js/) [tutorials](https://blog.jscrambler.com/build-app-vue-js-part-2/) we went through the basics of setting up a todo application with Vue.js. In this tutorial we will build out a shopping cart application with Vue.js and Vuex. Vuex is a state management library for Vue.js. This means that it helps us keep application state in sync across multiple components and routes through a single source of truth, called a store. In our shopping cart application users will be able to view products, add them to their cart and view the total cost of their order. We will handle routing on the frontend using the official vue-router package.
+## Build a shopping cart with Vue 2 and Vuex
+
+> "This tutorial goes through building out a shopping cart application with Vue.js and state management using Vuex. Users can browse products, add products to cart and view the total cost of their order. We set up routing using vue-router."
+
+In a [previous tutorial](http://connorleech.info/blog/Build-a-Task-List-with-Laravel-5-and-Vue-2/) we went through the basics of setting up a todo application with Vue.js. In this tutorial we will build out a shopping cart application with Vue.js and Vuex. Vuex is a state management library for Vue.js. This means that it helps us keep application state in sync across multiple components and routes through a single source of truth, called a store. In our shopping cart application users will be able to view products, add them to their cart and view the total cost of their order. We will handle routing on the frontend using the official vue-router package.
 
 ### Why Vuex and what the heck is state management? 
 
@@ -274,7 +277,10 @@ Now that we have defined our routes and store it's time to build out the compone
 
 The Products component will render a list of the products for sale and feature "Add to Cart" buttons for customers to buy the products.
 
+![](https://image.ibb.co/mitOUQ/Screen_Shot_2017_09_14_at_11_05_17_AM.png)
+
 **src/components/Product.vue**
+
 ```
 <template>
   <div>
@@ -315,7 +321,7 @@ export default {
   ])
 }
 </script>
-``` 
+```
 
 The `mapGetters` function pairs keys to the results of the getter functions. This means that in our local component state their are `products` and `length` values that map to our global store. These values are reactive so that if our state updates within another component these values will also be updates. The `mapActions` helper maps local methods to the actions we defined within our store. 
 
@@ -326,6 +332,7 @@ We can see the value of this when we define our NavBar. In the NavBar we want to
 The Javascript for the NavBar looks like this:
 
 **src/components/NavBar.vue**
+
 ```
 import { mapGetters } from 'vuex'
 
@@ -355,6 +362,7 @@ And the relevant HTML within the Vue template:
   </div>
 </div>
 ```
+
 The `itemsInCart` value draws its data from the store and the get cartProducts call. We make modifications to the data in our computed property so that we display the current number of items the customer would like to purchase. The classes here add in styling from the Bulma CSS library and the `<router-link>` components render anchor tags for navigation.
 
 Finally, we have the Cart component for rendering the items the user would like to buy and the total cost for their order.
@@ -418,7 +426,7 @@ export default {
 </script>
 ```
 
-Here we use computed properties with the mapGetters helper function to bind the `added` value of the store to `products` in the local component scope. We read this one to our calculate our `total` in a value local to this component but that derives its information from the global store. Lastly, we add a method for checkout that shows an alert for the total amount of money the user owes. If you are interested in building out real life payment processing you can view [this tutorial](https://codeburst.io/standing-on-the-shoulders-of-giants-node-js-vue-2-stripe-heroku-and-amazon-s3-c6fe03ee1118)
+Here we use computed properties with the mapGetters helper function to bind the `added` value of the store to `products` in the local component scope. We read this one to our calculate our `total` in a value local to this component but that derives its information from the global store. Lastly, we add a method for checkout that shows an alert for the total amount of money the user owes. If you are interested in building out real life payment processing you can view [this tutorial](http://connorleech.info/blog/How-to-Build-Payment-Processing-with-Vuejs-and-Nodejs/)
 
 ### Conclusion 
 
