@@ -1,10 +1,14 @@
 # vuex-shopping-cart
 
-> a shopping cart built with vue and vuex
+> A shopping cart built with Vue 2 and Vuex 
+
+> Full tutorial [on Medium](https://medium.com/employbl/build-a-shopping-cart-with-vue-2-and-vuex-5d58b93c513f)
+
+> For an example of a Vue.js shopping cart that does NOT use Vuex check [this tutorial](https://medium.com/@connorleech/build-a-shopping-cart-with-vue-js-and-element-ui-no-vuex-54682e9df5cd) and [repo](https://github.com/connor11528/vue-shopping-cart)
 
 ## Vuex Tutorial
 
-In some [previous](https://blog.jscrambler.com/build-app-vue-js/) [tutorials](https://blog.jscrambler.com/build-app-vue-js-part-2/) we went through the basics of setting up a todo application with Vue.js. In this tutorial we will build out a shopping cart application with Vue.js and Vuex. Vuex is a state management library for Vue.js. This means that it helps us keep application state in sync across multiple components and routes through a single source of truth, called a store. In our shopping cart application users will be able to view products, add them to their cart and view the total cost of their order. We will handle routing on the frontend using the official vue-router package.
+In a [previous tutorial](http://connorleech.info/blog/Build-a-Task-List-with-Laravel-5-and-Vue-2/) we went through the basics of setting up a todo application with Vue.js and Laravel. In this tutorial we will build out a shopping cart application with Vue.js and Vuex. Vuex is a state management library for Vue.js. This means that it helps us keep application state in sync across multiple components and routes through a single source of truth, called a store. In our shopping cart application users will be able to view products, add them to their cart and view the total cost of their order. We will handle routing on the frontend using the official vue-router package.
 
 ### Why Vuex and what the heck is state management? 
 
